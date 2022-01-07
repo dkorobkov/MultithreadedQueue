@@ -8,12 +8,11 @@
 #include <stdio.h>
 #include "MtQueue.h"
 
-static volatile int entries = 0;
-
 MtQueue::MtQueue()
 {
 	// TODO Auto-generated constructor stub
 	pthread_mutex_init(&mtx, NULL);
+	entries = 0;
 }
 
 MtQueue::~MtQueue()
