@@ -26,6 +26,7 @@ protected:
 	std::queue<void*> qPtrs;
 	void* pData;
 	pthread_mutex_t mtx;
+	volatile int entries; // Check for accidental multiple entries into mutex i.e. "mutex not working" diag
 };
 
 #endif /* MTQUEUE_H_ */
